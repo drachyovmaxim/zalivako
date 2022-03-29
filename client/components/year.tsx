@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import Link from "next/link";
 
 import Row from "@components/row";
-// import styles from "@styles/sections/features.module.scss";
+import styles from "@styles/year.module.scss";
 
 interface Props {
   title: string;
@@ -13,8 +13,11 @@ const Year: FunctionComponent<Props> = ({ title, works }) => {
   // console.log(works);
 
   return (
-    <div>
-      <div>{title}</div>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        {" "}
+        <div className={styles.title}>{title}</div>
+      </div>
       <div>
         {works.map((work: any, index: number) => {
           return (

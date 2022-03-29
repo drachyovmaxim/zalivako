@@ -1,0 +1,19 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.container {
+  @include respond-to(medium) {
+    // padding: 100px 0;
+  }
+
+  .header {
+    position: relative;
+
+    .title {
+      font-weight: 500;
+      position: absolute;
+      left: calc($grid);
+      bottom: calc($grid * -1.5);
+    }
+  }
+}
