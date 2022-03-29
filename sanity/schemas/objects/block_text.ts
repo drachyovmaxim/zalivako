@@ -20,6 +20,22 @@ const blockText = {
       ],
     },
     {
+      name: "fontSize",
+      title: "Font-size",
+      type: "number",
+      options: {
+        isHighlighted: true,
+      },
+    },
+    {
+      name: "lineHeight",
+      title: "Line-height",
+      type: "number",
+      options: {
+        isHighlighted: true,
+      },
+    },
+    {
       name: "width",
       title: "Width",
       description: "From 0 to 100",
@@ -62,9 +78,20 @@ const blockText = {
     },
   ],
   preview: {
-    prepare() {
+    select: {
+      blocks: "text",
+    },
+    prepare(value: any) {
+      const block = (value.blocks || []).find(
+        (block) => block._type === "block"
+      );
       return {
-        title: "Text Section",
+        title: block
+          ? block.children
+              .filter((child) => child._type === "span")
+              .map((span) => span.text)
+              .join("")
+          : "No title",
       };
     },
   },

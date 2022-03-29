@@ -47,6 +47,8 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
                           marginTop: cell.spacingTop && cell.spacingTop + "px",
                           marginBottom:
                             cell.spacingBottom && cell.spacingBottom + "px",
+                          fontSize: cell.fontSize && cell.fontSize + "px",
+                          lineHeight: cell.lineHeight && cell.lineHeight + "px",
                         }}
                       >
                         <TextParser data={cell.text} />

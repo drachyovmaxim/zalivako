@@ -43,7 +43,7 @@
   .image-wrapper,
   .text-wrapper {
     display: flex;
-    width: 90%;
+    width: 70%;
     flex-direction: column;
     height: 100%;
     margin-left: auto;
@@ -61,5 +61,12 @@
   .text-wrapper {
     font-size: 10px;
     line-height: 11px;
+    width: 90%;
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
