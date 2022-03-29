@@ -1,16 +1,60 @@
+:root {
+  --color-main: rgba(0, 0, 0, 1);
+  --color-bg: #ffffff;
+  --color-white: #ffffff;
+  --grid: 10px;
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom); /* THIS ONE GETS US THE HOME BAR HEIGHT */
+  --sal: env(safe-area-inset-left);
+}
+
 html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  color: var(--color-main);
+  /* font-weight: 400; */
+  /* font-size: 20px; */
+  /* font-family: "kommuna", serif; */
+  /* line-height: 30px; */
+  background-color: var(--color-bg);
+
+  text-rendering: optimizeLegibility;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+}
+
+.scroll-disabled {
+  overflow: hidden;
 }
 
 a {
-  color: inherit;
+  color: var(--color-main);
   text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+a:hover,
+a:active,
+a:focus {
+  outline: 0;
 }
