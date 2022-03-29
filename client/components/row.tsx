@@ -29,7 +29,14 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
           <a className={styles.link}>
             {cells?.map((cell, index) => {
               return (
-                <div key={index} className={styles.cell}>
+                <div
+                  key={index}
+                  className={
+                    cell._type == "empty"
+                      ? [styles.cell, styles.empty].join(" ")
+                      : styles.cell
+                  }
+                >
                   <div className={styles.body}>
                     {cell._type == "empty" && <div></div>}
                     {cell._type == "blockText" && (
@@ -78,6 +85,17 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
                 </div>
               );
             })}
+            {cells.length < 5 &&
+              [...Array(5 - cells.length)].map((_, i) => {
+                return (
+                  <div
+                    key={i}
+                    className={[styles.cell, styles.empty].join(" ")}
+                  >
+                    <div className={styles.body}></div>
+                  </div>
+                );
+              })}
           </a>
         </Link>
       </div>

@@ -9,6 +9,7 @@
   .link {
     @include respond-to(medium) {
       display: flex;
+      flex-wrap: wrap;
     }
   }
 
@@ -18,17 +19,23 @@
       padding: 0 calc($grid / 2);
     }
 
-    &:nth-child(1) {
+    &:nth-child(5n - 4) {
       @include respond-to(medium) {
         width: 12.5%;
       }
     }
 
-    &:nth-child(2) {
+    &:nth-child(5n - 3) {
       @include respond-to(medium) {
         width: 12.5%;
       }
     }
+
+    // &:nth-child(2) {
+    //   @include respond-to(medium) {
+    //     width: 12.5%;
+    //   }
+    // }
   }
 
   .body {
