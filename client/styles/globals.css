@@ -14,10 +14,10 @@ body {
   margin: 0;
   padding: 0;
   color: var(--color-main);
-  /* font-weight: 400; */
-  /* font-size: 20px; */
-  /* font-family: "kommuna", serif; */
-  /* line-height: 30px; */
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  line-height: 16px;
   background-color: var(--color-bg);
 
   text-rendering: optimizeLegibility;
@@ -51,6 +51,10 @@ h3 {
   margin: 0;
   font-weight: normal;
   font-size: 20px;
+}
+
+p {
+  margin-top: 0;
 }
 
 a:hover,
