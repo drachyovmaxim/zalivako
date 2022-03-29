@@ -4,12 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import sanity from "@lib/sanity";
+import type { Cell } from "@interfaces/cell";
 import TextParser from "@components/text_parser";
 import styles from "@styles/row.module.scss";
 
 interface Props {
   slug: string;
-  cells: any;
+  cells: Cell[];
 }
 
 const CellImage = ({ image }: { image: { alt: string } }) => {
@@ -21,14 +22,12 @@ const CellImage = ({ image }: { image: { alt: string } }) => {
 };
 
 const Row: FunctionComponent<Props> = ({ cells, slug }) => {
-  // console.log(cells);
-
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <Link href={"/works/" + slug}>
           <a className={styles.link}>
-            {cells?.map((cell: any, index: number) => {
+            {cells?.map((cell, index) => {
               return (
                 <div key={index} className={styles.cell}>
                   <div className={styles.body}>
@@ -54,7 +53,6 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
                         <TextParser data={cell.text} />
                       </div>
                     )}
-                    {/* {console.log(cell)} */}
                     {cell._type == "image" && (
                       <div
                         className={
@@ -71,7 +69,9 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
                             cell.spacingBottom && cell.spacingBottom + "px",
                         }}
                       >
-                        <CellImage image={cell} />
+                        <div>
+                          <CellImage image={cell} />
+                        </div>
                       </div>
                     )}
                   </div>

@@ -2,16 +2,34 @@ import type { NextPage } from "next";
 import { format, parse } from "date-fns";
 
 import sanity from "@lib/sanity";
+// import type { Work } from "@interfaces/work";
+import DynamicMeta from "@components/dynamic_meta";
 import Year from "@components/year";
 import styles from "@styles/home.module.scss";
 
 const query = `*[_type == "work"] | order(year desc) {
-  ...
+  preview[] {
+    _type == 'empty' => {
+      _type,
+    },
+    _type == 'video' => {
+      _type,
+      "videoURL": asset->url,
+    },
+    _type == 'image' => {
+      ...,
+    },
+    _type == 'blockText' => {
+      ...
+    },
+  },
+  slug,
+  year
 }
 `;
 
 interface Props {
-  data: any;
+  data: [];
 }
 
 export const getStaticProps = async () => {
@@ -34,22 +52,25 @@ export const getStaticProps = async () => {
   return {
     props: {
       data: sortable.reverse(),
+      vata: data,
     },
     revalidate: 30,
   };
 };
 
 const Home: NextPage<Props> = ({ data }) => {
-  // console.log(data);
-
   return (
-    <div className={styles.container}>
-      <div>
-        {data.map((year: any, index: number) => {
-          return <Year key={index} title={year[0]} works={year[1]} />;
-        })}
+    <>
+      <DynamicMeta />
+
+      <div className={styles.container}>
+        <div>
+          {data.map((year, index) => {
+            return <Year key={index} title={year[0]} works={year[1]} />;
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

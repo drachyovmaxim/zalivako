@@ -9,13 +9,13 @@ const CommonMeta = () => {
         name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
       />
-      <meta name="keywords" content="zalivako" />
+      {/* <meta name="keywords" content="zalivako" /> */}
       <meta name="theme-color" content="#fff" />
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="zalivako" />
+      <meta property="og:site_name" content="http://zalivako.fail/" />
       <meta property="og:locale" content="en_US" />
       <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=block"
