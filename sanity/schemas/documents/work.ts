@@ -119,7 +119,7 @@ const work = {
     {
       title: "Year",
       name: "year",
-      by: [{ field: "year", direction: "asc" }],
+      by: [{ field: "year", direction: "desc" }],
     },
   ],
 };

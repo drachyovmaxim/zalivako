@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Year: FunctionComponent<Props> = ({ title, works }) => {
-  // console.log(works);
+  console.log(works);
 
   return (
     <div className={styles.container}>

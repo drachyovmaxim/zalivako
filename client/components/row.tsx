@@ -21,7 +21,7 @@ const CellImage = ({ image }: { image: { alt: string } }) => {
 };
 
 const Row: FunctionComponent<Props> = ({ cells, slug }) => {
-  console.log(cells);
+  // console.log(cells);
 
   return (
     <div className={styles.container}>
@@ -36,8 +36,17 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
                     {cell._type == "blockText" && (
                       <TextParser data={cell.text} />
                     )}
+                    {/* {console.log(cell)} */}
                     {cell._type == "image" && (
-                      <div>
+                      <div
+                        className={
+                          cell.position == "center"
+                            ? [styles["image-wrapper"], styles.center].join(" ")
+                            : cell.position == "bottom"
+                            ? [styles["image-wrapper"], styles.bottom].join(" ")
+                            : styles["image-wrapper"]
+                        }
+                      >
                         <CellImage image={cell} />
                       </div>
                     )}
