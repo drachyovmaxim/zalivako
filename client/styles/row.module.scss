@@ -1,0 +1,22 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.container {
+  .wrapper {
+    @include respond-to(medium) {
+      display: flex;
+    }
+  }
+
+  .cell {
+    width: 25%;
+
+    &:nth-child(1) {
+      width: 12.5%;
+    }
+
+    &:nth-child(2) {
+      width: 12.5%;
+    }
+  }
+}

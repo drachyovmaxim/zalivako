@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import Link from "next/link";
 
+import Row from "@components/row";
 // import styles from "@styles/sections/features.module.scss";
 
 interface Props {
@@ -9,6 +10,8 @@ interface Props {
 }
 
 const Year: FunctionComponent<Props> = ({ title, works }) => {
+  // console.log(works);
+
   return (
     <div>
       <div>{title}</div>
@@ -16,15 +19,8 @@ const Year: FunctionComponent<Props> = ({ title, works }) => {
         {works.map((work: any, index: number) => {
           return (
             <div key={index}>
-              <Link href={"/works/" + work.slug.current}>
-                <a
-                // className={styles.link}
-                // onClick={() => handleMenuVisibility()}
-                >
-                  <div>{work.title}</div>
-                  <div>{work.year}</div>
-                </a>
-              </Link>
+              {/* <div>{work.title}</div> */}
+              <Row slug={work.slug.current} cells={work.preview} />
             </div>
           );
         })}

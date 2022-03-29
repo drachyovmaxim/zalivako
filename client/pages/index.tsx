@@ -40,7 +40,7 @@ export const getStaticProps = async () => {
 };
 
 const Home: NextPage<Props> = ({ data }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className={styles.container}>

@@ -1,0 +1,45 @@
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray: #a6a6a6;
+
+$base-font-family: "kommuna", serif;
+$font-mobile: 20px;
+$font-desktop: 20px;
+$line-height-mobile: 30px;
+$line-height-mobile-big: 34px;
+$font-h1: 65px;
+$line-height-h1: 85px;
+$line-height-h1-small: 64px;
+$font-h2: 32px;
+$line-height-h2: 36px;
+$line-height-h2-big: 42px;
+$font-h3: 1.3095238095238095vw;
+$line-height-h3: 1.9047619047619047vw;
+$line-height-h3-small: 1.4583333333333333vw;
+
+// grid
+$grid: 20px;
+$grid-mobile: 10px;
+$grid-desktop: 20px;
+
+// border-width
+$border-width-mobile: 1px;
+$border-width-desktop: 1.5px;
+
+// sizes
+$sizeXXL: 1760px;
+$sizeXL: 1180px;
+$sizeL: 1024px;
+$sizeM: 808px;
+$sizeS: 320px;
+
+$sizeContentMax: 1920px;
+$sizeMax: $sizeXXL;
+
+$row-width-s: 90%;
+$row-width-m: 740px;
+$row-width-l: 964px;
+$row-width-xl: 1180px;
+$row-width-xxl: 1332px;
+
+$base-transition-style: cubic-bezier(0.66, 0, 0.07, 1);

@@ -48,7 +48,6 @@ const work = {
     },
     {
       name: "preview",
-      title: "Preview",
       type: "array",
       of: [
         {

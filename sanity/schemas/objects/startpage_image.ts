@@ -47,7 +47,6 @@ const startpageImage = {
       options: {
         isHighlighted: true,
         list: [
-          { title: "Default", value: "default" },
           { title: "Top", value: "top" },
           { title: "Center", value: "center" },
           { title: "Bottom", value: "bottom" },
