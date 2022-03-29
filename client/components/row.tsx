@@ -47,7 +47,10 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
                             : styles["image-wrapper"]
                         }
                         style={{
-                          width: cell.width + "%",
+                          width: cell.width && cell.width + "%",
+                          marginTop: cell.spacingTop && cell.spacingTop + "px",
+                          marginBottom:
+                            cell.spacingBottom && cell.spacingBottom + "px",
                         }}
                       >
                         <CellImage image={cell} />
