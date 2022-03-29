@@ -32,7 +32,7 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
               return (
                 <div key={index} className={styles.cell}>
                   <div className={styles.body}>
-                    {cell._type == "empty" && <div>empty</div>}
+                    {cell._type == "empty" && <div></div>}
                     {cell._type == "blockText" && (
                       <TextParser data={cell.text} />
                     )}
@@ -46,6 +46,9 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
                             ? [styles["image-wrapper"], styles.bottom].join(" ")
                             : styles["image-wrapper"]
                         }
+                        style={{
+                          width: cell.width + "%",
+                        }}
                       >
                         <CellImage image={cell} />
                       </div>
