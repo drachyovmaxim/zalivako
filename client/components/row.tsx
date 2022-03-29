@@ -34,7 +34,23 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
                   <div className={styles.body}>
                     {cell._type == "empty" && <div></div>}
                     {cell._type == "blockText" && (
-                      <TextParser data={cell.text} />
+                      <div
+                        className={
+                          cell.position == "center"
+                            ? [styles["text-wrapper"], styles.center].join(" ")
+                            : cell.position == "bottom"
+                            ? [styles["text-wrapper"], styles.bottom].join(" ")
+                            : styles["text-wrapper"]
+                        }
+                        style={{
+                          width: cell.width && cell.width + "%",
+                          marginTop: cell.spacingTop && cell.spacingTop + "px",
+                          marginBottom:
+                            cell.spacingBottom && cell.spacingBottom + "px",
+                        }}
+                      >
+                        <TextParser data={cell.text} />
+                      </div>
                     )}
                     {/* {console.log(cell)} */}
                     {cell._type == "image" && (

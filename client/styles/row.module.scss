@@ -40,7 +40,8 @@
     }
   }
 
-  .image-wrapper {
+  .image-wrapper,
+  .text-wrapper {
     display: flex;
     width: 90%;
     flex-direction: column;
@@ -55,5 +56,10 @@
     &.bottom {
       justify-content: flex-end;
     }
+  }
+
+  .text-wrapper {
+    font-size: 10px;
+    line-height: 11px;
   }
 }
