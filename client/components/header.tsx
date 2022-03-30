@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -7,6 +7,7 @@ import Modal from "./modal";
 import styles from "@styles/header.module.scss";
 
 const Header: FunctionComponent = () => {
+  const [modalVisible, setModalVisible] = useState(false);
   const router = useRouter();
   return (
     <>
@@ -19,7 +20,10 @@ const Header: FunctionComponent = () => {
             <a className={styles.cv}>CV</a>
           </Link>
           <Link href="/">
-            <a className={styles.contacts}>
+            <a
+              className={styles.contacts}
+              onClick={() => setModalVisible(true)}
+            >
               <Image
                 src="/phone.svg"
                 layout="responsive"
@@ -31,6 +35,13 @@ const Header: FunctionComponent = () => {
           </Link>
         </div>
       </header>
+      <Modal
+        opened={modalVisible}
+        onClose={() => setModalVisible(!modalVisible)}
+        type={"contacts"}
+      >
+        <div></div>
+      </Modal>
     </>
   );
 };

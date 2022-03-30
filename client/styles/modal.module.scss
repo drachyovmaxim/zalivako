@@ -26,4 +26,52 @@
     left: 0;
     background: transparent;
   }
+
+  .close {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: $grid-mobile;
+    right: $grid-mobile;
+    cursor: pointer;
+  }
+
+  .body {
+    border: 1px solid $color-black;
+    background-color: $color-white;
+    padding: $grid-mobile;
+    position: relative;
+    z-index: 2;
+    margin: 70px $grid;
+
+    @include respond-to(medium) {
+      max-width: 380px;
+      padding: $grid * 2;
+      margin-left: auto;
+      margin-right: $grid-desktop;
+    }
+  }
+}
+
+.contacts {
+  .item {
+    margin-bottom: calc($grid-mobile / 2);
+
+    @include respond-to(medium) {
+      margin-bottom: calc($grid-mobile * 1.5);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .link {
+    font-weight: 500;
+    display: inline-block;
+
+    @include respond-to(medium) {
+      font-size: 20px;
+    }
+  }
 }
