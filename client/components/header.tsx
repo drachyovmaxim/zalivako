@@ -19,20 +19,18 @@ const Header: FunctionComponent = () => {
           <Link href="/cv">
             <a className={styles.cv}>CV</a>
           </Link>
-          <Link href="/">
-            <a
-              className={styles.contacts}
-              onClick={() => setModalVisible(true)}
-            >
-              <Image
-                src="/phone.svg"
-                layout="responsive"
-                width={31}
-                height={31}
-                alt="Contacts icon"
-              />
-            </a>
-          </Link>
+          <div
+            className={styles.contacts}
+            onClick={() => setModalVisible(true)}
+          >
+            <Image
+              src="/phone.svg"
+              layout="responsive"
+              width={31}
+              height={31}
+              alt="Contacts icon"
+            />
+          </div>
         </div>
       </header>
       <Modal

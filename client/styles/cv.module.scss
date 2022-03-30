@@ -2,10 +2,10 @@
 @import "./mixins";
 
 .container {
-  padding: 70px 0;
+  padding: 70px $grid;
 
   @include respond-to(medium) {
-    padding: 100px 0;
+    padding: 100px $grid-desktop;
   }
 
   .wrapper {
