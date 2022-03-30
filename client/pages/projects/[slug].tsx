@@ -62,7 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const Slider = ({ image }: { image: { alt: string } }) => {
+const ImageItem = ({ image }: { image: { alt: string } }) => {
   return (
     <Image
       src={imageUrlFor(image).url()}
@@ -94,53 +94,67 @@ const Project: NextPage<Props> = ({ project }) => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div>
-            <div className={styles["slider-container"]}>
-              <div className={styles.slider} ref={viewportRef}>
-                <div className={styles["slider-wrapper"]}>
-                  {content?.map((item, index) => {
-                    return (
-                      <div key={index} className={styles.slide}>
-                        <div className={styles["slide-wrapper"]}>
-                          {item._type == "image" && (
-                            <div className={styles["image-wrapper"]}>
-                              <Slider image={item} />
-                            </div>
-                          )}
-                        </div>
+            {content.length == 1 ? (
+              content?.map((item, index) => {
+                return (
+                  <div className={styles["single-wrapper"]} key={index}>
+                    {item._type == "image" && (
+                      <div className={styles["image-wrapper"]}>
+                        <ImageItem image={item} />
                       </div>
-                    );
-                  })}
-                </div>
-              </div>
-              <div className={styles.arrows}>
-                <div
-                  onClick={scrollPrev}
-                  className={[styles.arrow, styles.left].join(" ")}
-                >
-                  <div className={styles.cirqle}>
-                    <Image
-                      src={"/arrow-left.svg"}
-                      width={32}
-                      height={32}
-                      alt="Slide left"
-                    />
+                    )}
+                  </div>
+                );
+              })
+            ) : (
+              <div className={styles["slider-container"]}>
+                <div className={styles.slider} ref={viewportRef}>
+                  <div className={styles["slider-wrapper"]}>
+                    {content?.map((item, index) => {
+                      return (
+                        <div key={index} className={styles.slide}>
+                          <div className={styles["slide-wrapper"]}>
+                            {item._type == "image" && (
+                              <div className={styles["image-wrapper"]}>
+                                <ImageItem image={item} />
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-                <div
-                  onClick={scrollNext}
-                  className={[styles.arrow, styles.right].join(" ")}
-                >
-                  <div className={styles.cirqle}>
-                    <Image
-                      src={"/arrow-right.svg"}
-                      width={32}
-                      height={32}
-                      alt="Slide right"
-                    />
+                <div className={styles.arrows}>
+                  <div
+                    onClick={scrollPrev}
+                    className={[styles.arrow, styles.left].join(" ")}
+                  >
+                    <div className={styles.cirqle}>
+                      <Image
+                        src={"/arrow-left.svg"}
+                        width={32}
+                        height={32}
+                        alt="Slide left"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    onClick={scrollNext}
+                    className={[styles.arrow, styles.right].join(" ")}
+                  >
+                    <div className={styles.cirqle}>
+                      <Image
+                        src={"/arrow-right.svg"}
+                        width={32}
+                        height={32}
+                        alt="Slide right"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
           <div>
             <TextParser data={text} />
