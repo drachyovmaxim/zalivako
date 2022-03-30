@@ -16,7 +16,7 @@ const Header: FunctionComponent = () => {
           <a className={styles.logo}>SASHA ZALIVAKO</a>
         </Link>
         <div className={styles.right}>
-          <Link href="/">
+          <Link href="/cv">
             <a className={styles.cv}>CV</a>
           </Link>
           <Link href="/">
