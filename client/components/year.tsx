@@ -45,7 +45,9 @@ const Year: FunctionComponent<Props> = ({ title, works }) => {
         <div className={styles.wrapper}>
           <Line />
           <div className={styles.title}>{title}</div>
-          {/* <Line /> */}
+          <div className={styles.bottom}>
+            <Line />
+          </div>
         </div>
       </div>
       <div

@@ -4,13 +4,23 @@
 .container {
   margin-top: -1px;
 
+  &:last-child {
+    .header .wrapper {
+      border-bottom: 1px solid $color-black;
+
+      @include respond-to(medium) {
+        border-bottom: none;
+      }
+    }
+  }
+
   .header {
     position: relative;
     padding: 0 $grid;
     cursor: pointer;
 
     @include respond-to(medium) {
-      padding: 0 $grid-desktop calc($grid-mobile);
+      padding: 0 $grid-desktop;
     }
 
     &.opened {
@@ -19,7 +29,7 @@
       .title {
         @include respond-to(medium) {
           position: absolute;
-          bottom: -27px;
+          bottom: -38px;
           left: $grid-desktop;
           margin-top: 0;
         }
@@ -39,8 +49,13 @@
     .title {
       @include respond-to(medium) {
         margin-top: 11px;
+        margin-bottom: 11px;
       }
     }
+  }
+
+  .bottom {
+    margin-top: -1px;
   }
 
   .line {
