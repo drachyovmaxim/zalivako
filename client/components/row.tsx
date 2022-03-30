@@ -34,7 +34,7 @@ const Row: FunctionComponent<Props> = ({ cells, slug }) => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <Link href={"/works/" + slug}>
+        <Link href={"/projects/" + slug}>
           <a className={styles.link}>
             {cells?.map((cell, index) => {
               return (

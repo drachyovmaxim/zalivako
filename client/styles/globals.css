@@ -62,3 +62,9 @@ a:active,
 a:focus {
   outline: 0;
 }
+
+.isDragging {
+  cursor: grabbing !important;
+  cursor: -moz-grabbing !important;
+  cursor: -webkit-grabbing !important;
+}
