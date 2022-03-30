@@ -1,0 +1,23 @@
+@import "./variables";
+@import "./mixins";
+
+.container {
+  padding: 70px 0;
+
+  @include respond-to(medium) {
+    padding: 100px 0;
+  }
+
+  .wrapper {
+    max-width: 550px;
+    margin: 0 auto;
+
+    p a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

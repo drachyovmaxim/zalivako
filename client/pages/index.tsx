@@ -52,7 +52,6 @@ export const getStaticProps = async () => {
   return {
     props: {
       data: sortable.reverse(),
-      vata: data,
     },
     revalidate: 30,
   };
