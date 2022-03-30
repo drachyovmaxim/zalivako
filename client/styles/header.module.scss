@@ -1,0 +1,45 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.header {
+  padding: 15px $grid 12px;
+  border-bottom: 1px solid $color-black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond-to(medium) {
+    padding: 13px $grid-desktop;
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+
+    @include respond-to(medium) {
+      width: 25%;
+      justify-content: space-between;
+      padding-left: calc($grid / 2);
+    }
+  }
+
+  .logo,
+  .cv {
+    font-weight: 500;
+
+    @include respond-to(medium) {
+      font-size: 20px;
+    }
+  }
+
+  .contacts {
+    width: 22px;
+    height: 22px;
+    margin-left: $grid;
+
+    @include respond-to(medium) {
+      width: 31px;
+      height: 31px;
+    }
+  }
+}

@@ -16,7 +16,7 @@ const DynamicMeta = (props: Props) => {
   const description = props.description ? props.description : "";
   const url = props.url ? props.url : "http://zalivako.fail/";
   const imageWidth = props.imageWidth ? props.imageWidth : "1200";
-  const imageHeight = props.imageHeight ? props.imageHeight : "623";
+  const imageHeight = props.imageHeight ? props.imageHeight : "600";
   // const imageSrc = props.imageSrc
   //   ? props.imageSrc
   //   : `https://radio.syg.ma${socialImage.src}`;
