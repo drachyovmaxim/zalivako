@@ -32,7 +32,13 @@ const Modal: FunctionComponent<Props> = ({
           }
         >
           <div className={styles.overlay} onClick={onClose}></div>
-          <div className={styles.body}>
+          <div
+            className={
+              type == "contacts"
+                ? [styles.body, styles.contacts].join(" ")
+                : styles.body
+            }
+          >
             <div className={styles.close} onClick={onClose}>
               <Image
                 src="/close.svg"

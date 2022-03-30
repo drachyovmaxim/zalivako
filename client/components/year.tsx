@@ -3,6 +3,9 @@ import React, { FunctionComponent, useState } from "react";
 import type { Work } from "@interfaces/work";
 import Row from "@components/row";
 import styles from "@styles/year.module.scss";
+import { useRouter } from "next/router";
+import Modal from "./modal";
+import Project from "@pages/projects/[slug]";
 
 interface Props {
   title: string;
@@ -10,6 +13,7 @@ interface Props {
 }
 
 const Year: FunctionComponent<Props> = ({ title, works }) => {
+  const router = useRouter();
   const [opened, setOpened] = useState(false);
 
   const Line = () => {
@@ -59,6 +63,20 @@ const Year: FunctionComponent<Props> = ({ title, works }) => {
           return (
             <div key={index}>
               <Row slug={work.slug.current} cells={work.preview} />
+              {router.query.slug == work.slug.current && (
+                <Modal
+                  opened={!!router.query.slug}
+                  onClose={() => router.push("/", "/", { scroll: false })}
+                >
+                  <Project
+                    project={{
+                      title: work.title,
+                      text: work.text,
+                      content: work.content,
+                    }}
+                  />
+                </Modal>
+              )}
             </div>
           );
         })}

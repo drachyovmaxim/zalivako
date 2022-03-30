@@ -28,27 +28,45 @@
   }
 
   .close {
-    width: 32px;
-    height: 32px;
     position: absolute;
     top: $grid-mobile;
     right: $grid-mobile;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
   }
 
   .body {
-    border: 1px solid $color-black;
-    background-color: $color-white;
+    position: fixed;
+    top: $grid * 1.5;
+    right: $grid;
+    bottom: $grid * 1.5;
+    left: $grid;
+    margin: 0 auto;
     padding: $grid-mobile;
-    position: relative;
-    z-index: 2;
-    margin: 70px $grid;
+    overflow: scroll;
+    background-color: $color-white;
+    border: 1px solid $color-black;
 
     @include respond-to(medium) {
-      max-width: 380px;
+      max-width: 890px;
       padding: calc($grid / 1.5);
-      margin-left: auto;
-      margin-right: $grid-desktop;
+    }
+
+    &.contacts {
+      position: relative;
+      z-index: 2;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      margin: 70px $grid;
+
+      @include respond-to(medium) {
+        max-width: 380px;
+        margin-right: $grid-desktop;
+        margin-left: auto;
+      }
     }
   }
 }

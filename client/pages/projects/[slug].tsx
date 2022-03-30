@@ -85,8 +85,6 @@ const Project: NextPage<Props> = ({ project }) => {
   const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
   const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
 
-  console.log(project);
-
   return (
     <>
       <DynamicMeta title={title} />
@@ -117,6 +115,16 @@ const Project: NextPage<Props> = ({ project }) => {
                             {item._type == "image" && (
                               <div className={styles["image-wrapper"]}>
                                 <ImageItem image={item} />
+                              </div>
+                            )}
+                            {item._type == "video" && (
+                              <div className={styles["video-wrapper"]}>
+                                <video controls>
+                                  <source
+                                    src={item.videoURL}
+                                    type="video/mp4"
+                                  />
+                                </video>
                               </div>
                             )}
                           </div>
