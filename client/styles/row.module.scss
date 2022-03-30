@@ -2,8 +2,16 @@
 @import "./mixins.scss";
 
 .container {
+  padding: 0 $grid;
+
   @include respond-to(medium) {
-    padding: 0 calc($grid / 2);
+    padding: 0 $grid-desktop;
+  }
+
+  .wrapper {
+    @include respond-to(medium) {
+      margin: 0 calc($grid / -2);
+    }
   }
 
   .link {
@@ -19,6 +27,14 @@
       padding: 0 calc($grid / 2);
     }
 
+    &.empty {
+      display: none;
+
+      @include respond-to(medium) {
+        display: block;
+      }
+    }
+
     &:nth-child(5n - 4) {
       @include respond-to(medium) {
         width: 12.5%;
@@ -30,19 +46,14 @@
         width: 12.5%;
       }
     }
-
-    // &:nth-child(2) {
-    //   @include respond-to(medium) {
-    //     width: 12.5%;
-    //   }
-    // }
   }
 
   .body {
     height: 100%;
+    border-bottom: 1px solid $color-black;
+    padding: $grid 0;
 
     @include respond-to(medium) {
-      border-top: 1px solid $color-black;
       padding: $grid 0;
     }
   }
@@ -50,11 +61,15 @@
   .image-wrapper,
   .text-wrapper {
     display: flex;
-    width: 70%;
     flex-direction: column;
+    width: 45%;
     height: 100%;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
+
+    @include respond-to(medium) {
+      width: 70%;
+    }
 
     &.center {
       justify-content: center;
@@ -66,9 +81,13 @@
   }
 
   .text-wrapper {
+    width: 85%;
     font-size: 10px;
     line-height: 11px;
-    width: 90%;
+
+    @include respond-to(medium) {
+      width: 90%;
+    }
 
     p {
       &:last-child {

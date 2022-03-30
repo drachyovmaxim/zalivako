@@ -1,0 +1,29 @@
+@import "./variables";
+@import "./mixins";
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility $base-transition-style 0.1s,
+    opacity $base-transition-style 0.1s;
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+  }
+}

@@ -3,6 +3,7 @@ import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 import Link from "next/link";
 
+import imageUrlFor from "@lib/image_url_for";
 import sanity from "@lib/sanity";
 import type { Cell } from "@interfaces/cell";
 import TextParser from "@components/text_parser";
@@ -18,7 +19,15 @@ const CellImage = ({ image }: { image: { alt: string } }) => {
     enableBlurUp: false,
   });
 
-  return <Image {...imageProps} layout="responsive" alt={image.alt} />;
+  return (
+    <Image
+      src={imageUrlFor(image).url()}
+      width={imageProps.width}
+      height={imageProps.height}
+      layout="responsive"
+      alt={image.alt}
+    />
+  );
 };
 
 const Row: FunctionComponent<Props> = ({ cells, slug }) => {
