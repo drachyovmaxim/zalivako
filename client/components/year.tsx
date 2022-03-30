@@ -12,6 +12,28 @@ interface Props {
 const Year: FunctionComponent<Props> = ({ title, works }) => {
   const [opened, setOpened] = useState(false);
 
+  const Line = () => {
+    return (
+      <div className={styles.line}>
+        <div className={styles.cell}>
+          <div className={styles.border}></div>
+        </div>
+        <div className={styles.cell}>
+          <div className={styles.border}></div>
+        </div>
+        <div className={styles.cell}>
+          <div className={styles.border}></div>
+        </div>
+        <div className={styles.cell}>
+          <div className={styles.border}></div>
+        </div>
+        <div className={styles.cell}>
+          <div className={styles.border}></div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className={styles.container}>
       <div
@@ -21,24 +43,9 @@ const Year: FunctionComponent<Props> = ({ title, works }) => {
         onClick={() => setOpened(!opened)}
       >
         <div className={styles.wrapper}>
-          <div className={styles.line}>
-            <div className={styles.cell}>
-              <div className={styles.border}></div>
-            </div>
-            <div className={styles.cell}>
-              <div className={styles.border}></div>
-            </div>
-            <div className={styles.cell}>
-              <div className={styles.border}></div>
-            </div>
-            <div className={styles.cell}>
-              <div className={styles.border}></div>
-            </div>
-            <div className={styles.cell}>
-              <div className={styles.border}></div>
-            </div>
-          </div>
+          <Line />
           <div className={styles.title}>{title}</div>
+          {/* <Line /> */}
         </div>
       </div>
       <div

@@ -29,6 +29,7 @@ const Header: FunctionComponent = () => {
               width={31}
               height={31}
               alt="Contacts icon"
+              priority
             />
           </div>
         </div>
