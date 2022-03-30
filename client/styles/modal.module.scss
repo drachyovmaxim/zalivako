@@ -28,11 +28,11 @@
   }
 
   .close {
-    position: absolute;
-    top: $grid-mobile;
-    right: $grid-mobile;
+    position: sticky;
+    top: 0;
     width: 32px;
     height: 32px;
+    margin-left: auto;
     cursor: pointer;
   }
 
@@ -55,11 +55,11 @@
 
     &.contacts {
       position: relative;
-      z-index: 2;
       top: auto;
       right: auto;
       bottom: auto;
       left: auto;
+      z-index: 2;
       margin: 70px $grid;
 
       @include respond-to(medium) {

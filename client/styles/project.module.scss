@@ -15,9 +15,9 @@
 
   .slider {
     width: 100%;
+    overflow: hidden;
     cursor: move;
     cursor: grab;
-    overflow: hidden;
   }
 
   .slider-container {
@@ -64,11 +64,11 @@
     cursor: pointer;
 
     @include respond-to(medium) {
-      margin: 0;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
       left: -80px;
+      margin: 0;
+      transform: translateY(-50%);
     }
 
     &.right {
@@ -76,8 +76,8 @@
       margin-left: 40px;
 
       @include respond-to(medium) {
-        left: auto;
         right: -80px;
+        left: auto;
       }
     }
   }
