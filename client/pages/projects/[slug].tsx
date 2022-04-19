@@ -27,6 +27,10 @@ const singleProjectQuery = `*[_type == 'work' && slug.current == $slug][0] {
       _type,
       "videoURL": asset->url,
     },
+    _type == 'audio' => {
+      _type,
+      "audioURL": asset->url,
+    },
     _type == 'image' => {
       ...,
     },
@@ -125,6 +129,14 @@ const Project: NextPage<Props> = ({ project }) => {
                                     type="video/mp4"
                                   />
                                 </video>
+                              </div>
+                            )}
+                            {item._type == "audio" && (
+                              <div className={styles["audio-wrapper"]}>
+                                <audio controls src={item.audioURL}>
+                                  Your browser does not support the
+                                  <code>audio</code> element.
+                                </audio>
                               </div>
                             )}
                           </div>
