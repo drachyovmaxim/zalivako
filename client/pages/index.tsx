@@ -20,10 +20,6 @@ const query = `*[_type == "work"] | order(year desc) {
       _type,
       "videoURL": asset->url,
     },
-    _type == 'audio' => {
-      _type,
-      "audioURL": asset->url,
-    },
     _type == 'image' => {
       ...,
     },
@@ -38,6 +34,10 @@ const query = `*[_type == "work"] | order(year desc) {
     _type == 'video' => {
       _type,
       "videoURL": asset->url,
+    },
+    _type == 'audio' => {
+      _type,
+      "audioURL": asset->url,
     },
     _type == 'image' => {
       ...,
